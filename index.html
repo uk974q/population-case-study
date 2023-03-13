@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>ABC Co</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <span>ABC CO</span>
+    </header>
+    <section class="container">
+        <div class="input-box">
+            <select id="yearSelectionDropdown"></select>
+        </div>
+        <div class="card">
+            <div class="info">
+                <div class="info-title">World Population</div>
+                <div class="text-year"></div>
+                <div class="info-count"></div>
+            </div>
+            <div id="areaChart" class="area"></div>
+        </div>
+        <div id="graph" class="box">
+        <div class="legend"></div>
+        
+        </div>
+    </section>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/visuals/scatter_plot.js"></script>
+    <script type="module" src="js/visuals/line_area_chart.js"></script>
+    <script type="module" src="js/event_listeners.js"></script>
+</body>
+<footer>
+
+</footer>

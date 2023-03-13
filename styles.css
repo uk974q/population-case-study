@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+}
+header{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    padding: 10px;
+}
+.input-box{
+    width: 100%;
+    flex: 1 1 5%;
+}
+
+.input-box select{
+    padding: 6px;
+    box-shadow: 0 0 15px 4px rgb(0 0 0 / 6%);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card{
+    width: 100%;
+    flex: 1 1 30%;
+    display: flex;
+    padding-block: 10px;
+}
+.card .info{
+    max-width: 10%;
+    display: flex;
+    padding-top: 10px;
+    flex-direction: column;
+    flex: 1 1 10%;
+    border: 1px solid black;
+    font-size: 16px;
+}
+.card .info .info-title{
+    font-size: 1em;
+    padding: 10px;
+}
+.card .info .text-year{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+}
+.card .info .info-count{
+    font-size: 2.5em;
+    padding: 10px;
+}
+.card .area{
+    max-width: 50%;
+    flex: 1 1 70%;
+    border: 1px solid black;
+}
+
+.box{
+    flex: 1 1 65%;
+    max-height: 80%;
+    /* border: 1px solid red */
+}
+
+@media screen and (max-width: 1064px) {
+    .card .info {
+        font-size: 10px;
+    }
+  }
+
+@media screen and (max-width: 700px) {
+    .card {
+      flex: 1
+    }
+    
+    .card .info {
+        max-width: 80%;
+        font-size: 14px;
+        flex: 1;
+    }
+    .area{
+        display: none;
+    }
+  }
+
+  .cursor-pointer{
+    cursor: pointer;
+  }
+  .tooltip-country{
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #5b5b5b;
+  }
+  .tooltip-info{
+    display: flex;
+    flex-direction: column;
+  }
+  .tooltip-info .country-value{
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
