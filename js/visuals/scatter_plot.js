@@ -122,7 +122,8 @@ function ScatterPlot(){
 
     
     const legendGroup = svg.append('g')
-        .attr('transform', `translate(${config.marginLeft},${height - 30})`);
+    .attr('class', 'legend-group')
+        .attr('transform', `translate(${config.marginLeft},${height - 30})`)
         // .attr('transform', `translate(${config.marginLeft},${config.marginTop})`);
       
       // Add the legend entries
@@ -132,7 +133,12 @@ function ScatterPlot(){
         .append('g')
         .attr('class', 'legend-entry cursor-pointer')
         .attr('region',d=>d)
-        .attr('transform', (d, i) => `translate(${i * 100}, 0)`)
+        .attr('transform', (d, i) => {
+            if(width < 500 && i > 2){
+                return `translate(${(i-3) * 100}, 20)`
+            }
+            return `translate(${i * 100}, 0)`
+        })
         .on('mouseover',function(el,d){
             d3.selectAll('.scatter-circles').attr('opacity',0.2)
             d3.selectAll('.legend-entry').attr('opacity',0.2)
@@ -149,18 +155,25 @@ function ScatterPlot(){
       legendEntries.append('text')
         .text(d => d === '#N/A' ? 'Unknown': d)
         .attr('x', 15)
-        .attr('y', 5)
+        .attr('y', function(){
+           debugger
+            return 5
+        })
+        .attr('y', function(){
+            debugger
+             return 5
+         })
         .style('font-size', '12px');
       
       // Add the legend color boxes
       legendEntries.append('circle')
         .attr('cx', 0)
-        .attr('cy', 0)
+        .attr('y', function(){
+            return 5
+        })
         .attr('r', 7.5)
         .attr('fill', (d, i) => colorDomain(d));
-
-        
-        
+       
 }
 
 export default ScatterPlot
