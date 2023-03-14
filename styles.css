@@ -10,7 +10,7 @@ section{
     display: flex;
     flex-direction: column;
     height: 90vh;
-    width: 100vh;
+    width: 100vw;
     padding: 10px;
 }
 .input-box{
@@ -57,6 +57,7 @@ section{
     max-width: 50%;
     flex: 1 1 70%;
     border: 1px solid black;
+    padding-block: 10px;
 }
 
 .box{
@@ -66,19 +67,41 @@ section{
     /* border: 1px solid red */
 }
 
+.cursor-pointer{
+    cursor: pointer;
+  }
+.tooltip-country{
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #5b5b5b;
+}
+.tooltip-info{
+    display: flex;
+    flex-direction: column;
+}
+.tooltip-info .country-value{
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 1064px) {
     .card .info {
         font-size: 10px;
     }
-  }
+}
 
-@media screen and (max-width: 700px) {
-    select{
+@media screen and (max-width: 700px){
+    .input-box{
+        text-align: center;
+    }
+    .input-box select{
         width: 80%;
         text-align: center;
     }
     .card {
-      flex: 1
+      flex: 1;
+      justify-content:center
     }
     
     .card .info {
@@ -90,27 +113,6 @@ section{
     .area{
         display: none;
     }
-  }
+}
 
-  .cursor-pointer{
-    cursor: pointer;
-  }
-  .tooltip-country{
-    color: aliceblue;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #5b5b5b;
-  }
-  .tooltip-info{
-    display: flex;
-    flex-direction: column;
-  }
-  .tooltip-info .country-value{
-    letter-spacing: 1.5px;
-    font-weight: bold;
-  }
-  .legend-group {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+  
