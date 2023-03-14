@@ -5,6 +5,7 @@ header{
     background-color: blue;
     color: white;
     padding: 10px;
+    width: 100vw;
 }
 section{
     display: flex;

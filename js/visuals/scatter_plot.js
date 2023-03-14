@@ -27,7 +27,7 @@ function ScatterPlot() {
   let svg = d3
     .select(".box")
     .append("svg")
-    .attr("width", width)
+    .attr("width", width + config.marginLeft + config.marginRight)
     .attr("height", height + config.marginTop + config.marginBottom)
     .append("g")
     .attr(
@@ -40,7 +40,7 @@ function ScatterPlot() {
   let x = d3
     .scaleLinear()
     .domain(x_domain)
-    .range([0, width - config.marginLeft - config.marginRight - 50])
+    .range([0, width - config.marginRight])
     .nice();
 
   let y = d3
@@ -160,8 +160,12 @@ function ScatterPlot() {
     .attr("class", "legend-entry cursor-pointer")
     .attr("region", (d) => d)
     .attr("transform", (d, i) => {
-      if (width < 500 && i > 2) {
+      let w = width + config.marginLeft + config.marginRight + 60
+      if (w < 500 && i > 2) {
         return `translate(${(i - 3) * 100}, 20)`;
+      }
+      else if(w < 750 && w > 500 && i>= (COMMON_STORE["regions"].length -2)){
+        return `translate(${(i - 4) * 100}, 20)`;
       }
       return `translate(${i * 100}, 0)`;
     })
